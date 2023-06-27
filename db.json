@@ -1,0 +1,39 @@
+{
+  "user": [
+    {
+      "name": "Correa",
+      "email": "fcs@email.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 18
+    },
+    {
+      "name": "Fabiano ",
+      "email": "fabianopkr1@gmail.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 19
+    },
+    {
+      "name": "Fabiano ",
+      "email": "fabianopkr4@gmail.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 20
+    },
+    {
+      "name": "felipe ",
+      "email": ";felipe@gmail.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 21
+    },
+    {
+      "name": "Felipe",
+      "email": "felipeleopoldino01@icloud.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 22
+    }
+  ]
+}
