@@ -5,8 +5,8 @@ import { SafeAreaView, Text, View, Image, TouchableOpacity } from 'react-native'
 const apiUrl = 'https://superheroapi.com/api/6755748551123703'
 
 const Game = () => {
-   const [superHeroId1, setSuperHeroId1] = useState(3)
-   const [superHeroId2, setSuperHeroId2] = useState(3)
+   const [superHeroId1, setSuperHeroId1] = useState(70)
+   const [superHeroId2, setSuperHeroId2] = useState(150)
    const [superheroData1, setSuperheroData1] = useState(null)
    const [superheroData2, setSuperheroData2] = useState(null)
 
