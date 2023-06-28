@@ -1,10 +1,10 @@
-import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { SafeAreaView, Text, View, Image, TouchableOpacity } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
+import axios from 'axios'
 import BtnJogar from '../../assets/image/Btn_jogar.png'
 import Sair from '../../assets/image/exit.png'
 import styles from './game'
-import { useNavigation } from '@react-navigation/native'
 
 const apiUrl = 'https://superheroapi.com/api/6755748551123703'
 
@@ -15,8 +15,11 @@ const Game = () => {
    const [superheroData2, setSuperheroData2] = useState(null)
    const navigation = useNavigation()
 
+   const MAX_SUPERHERO_ID = 731
+   const MIN_SUPERHERO_ID = 1
+
    useEffect(() => {
-      const fetchData1 = async () => {
+      const fetchSuperheroData1 = async () => {
          try {
             const response = await axios.get(`${apiUrl}/${superHeroId1}`)
             setSuperheroData1(response.data)
@@ -25,7 +28,7 @@ const Game = () => {
          }
       }
 
-      const fetchData2 = async () => {
+      const fetchSuperheroData2 = async () => {
          try {
             const response = await axios.get(`${apiUrl}/${superHeroId2}`)
             setSuperheroData2(response.data)
@@ -34,15 +37,19 @@ const Game = () => {
          }
       }
 
-      fetchData1()
-      fetchData2()
+      fetchSuperheroData1()
+      fetchSuperheroData2()
    }, [superHeroId1, superHeroId2])
 
    function getRandomNumber() {
-      const min = 1
-      const max = 731
-      setSuperHeroId1(Math.floor(Math.random() * (max - min + 1)) + min)
-      setSuperHeroId2(Math.floor(Math.random() * (max - min + 1)) + min)
+      setSuperHeroId1(
+         Math.floor(Math.random() * (MAX_SUPERHERO_ID - MIN_SUPERHERO_ID + 1)) +
+            MIN_SUPERHERO_ID
+      )
+      setSuperHeroId2(
+         Math.floor(Math.random() * (MAX_SUPERHERO_ID - MIN_SUPERHERO_ID + 1)) +
+            MIN_SUPERHERO_ID
+      )
    }
 
    const handleBackHome = () => {
