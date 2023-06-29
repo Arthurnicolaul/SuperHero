@@ -5,7 +5,8 @@ import {
    Text,
    TextInput,
    TouchableOpacity,
-   KeyboardAvoidingView
+   KeyboardAvoidingView,
+   Linking
 } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import api from '../../../Services/api'
@@ -19,6 +20,7 @@ import Instagram from '../../assets/image/instagram.png'
 import Facebook from '../../assets/image/facebook.png'
 import Heroes from '../../assets/image/heroes.png'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+
 
 const Login = () => {
    const navigation = useNavigation()
@@ -75,71 +77,67 @@ const Login = () => {
       navigation.navigate('Cadastro' as never)
    }
 
-   return (
-      <KeyboardAvoidingView
-         style={styles.container}
-         enabled={false}
-         behavior={'height'}
-      >
-         <View style={styles.logocontainer}>
-            <Image style={styles.logo} source={Logo} />
-         </View>
-         <Image
-            style={styles.inputicon}
-            source={InputIcon}
-            resizeMode="contain"
-         />
-         <View style={styles.form}>
-            <TextInput
-               value={email}
-               onChangeText={setEmail}
-               style={styles.input}
-               placeholder="Email"
-               placeholderTextColor="grey"
-            />
-            <TextInput
-               value={password}
-               onChangeText={setPassword}
-               placeholder="Senha"
-               placeholderTextColor="grey"
-               secureTextEntry
-               style={styles.input}
-            />
-            <TouchableOpacity onPress={handleLogin}>
-               <Image
-                  style={styles.entrar}
-                  source={Entrar}
-                  resizeMode="contain"
-               />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={handleCadastro}>
-               <Text style={styles.cadastre}>CADASTRE-SE JÁ!</Text>
-            </TouchableOpacity>
-            <View style={styles.icons}>
-               <Image
-                  style={styles.icon}
-                  source={Gmail}
-                  resizeMode={'contain'}
-               />
-               <Image
-                  style={styles.icon}
-                  source={Instagram}
-                  resizeMode={'contain'}
-               />
-               <Image
-                  style={styles.icon}
-                  source={Facebook}
-                  resizeMode={'contain'}
-               />
-            </View>
-            <Image style={styles.cone} source={Cone} />
-            {message !== '' && <Text style={styles.errorText}>{message}</Text>}
-         </View>
-         <View>
-            <Image style={styles.heroes} source={Heroes} resizeMode="contain" />
-         </View>
-      </KeyboardAvoidingView>
-   )
-}
+
+  const openGmail = () => {
+    Linking.openURL("https://www.gmail.com");
+  };
+
+  const openInstagram = () => {
+    Linking.openURL("https://www.instagram.com");
+  };
+
+  const openFacebook = () => {
+    Linking.openURL("https://www.facebook.com");
+  };
+
+  return (
+    <KeyboardAvoidingView style={styles.container} enabled={false} behavior={"height"}>
+      <View style={styles.logocontainer}>
+        <Image style={styles.logo} source={Logo} />
+      </View>
+      <Image style={styles.inputicon} source={InputIcon} resizeMode="contain" />
+      <View style={styles.form}>
+        <TextInput
+          value={email}
+          onChangeText={setEmail}
+          style={styles.input}
+          placeholder="Email"
+          placeholderTextColor="grey"
+        />
+        <TextInput
+          value={password}
+          onChangeText={setPassword}
+          placeholder="Senha"
+          placeholderTextColor="grey"
+          secureTextEntry
+          style={styles.input}
+        />
+        <TouchableOpacity onPress={handleLogin}>
+          <Image style={styles.entrar} source={Entrar} resizeMode="contain" />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={handleCadastro}>
+          <Text style={styles.cadastre}>CADASTRE-SE JÁ!</Text>
+        </TouchableOpacity>
+        <View style={styles.icons}>
+          <TouchableOpacity onPress={openGmail}>
+            <Image style={styles.icon} source={Gmail} resizeMode={"contain"} />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={openInstagram}>
+            <Image style={styles.icon} source={Instagram} resizeMode={"contain"} />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={openFacebook}>
+            <Image style={styles.icon} source={Facebook} resizeMode={"contain"} />
+          </TouchableOpacity>
+        </View>
+        <Image style={styles.cone} source={Cone} />
+        {message !== "" && <Text style={styles.errorText}>{message}</Text>}
+      </View>
+      <View>
+        <Image style={styles.heroes} source={Heroes} resizeMode="contain" />
+      </View>
+    </KeyboardAvoidingView>
+  );
+};
+
 
 export default Login

@@ -64,7 +64,7 @@ export const styles = StyleSheet.create({
     justifyContent: "space-around",
   },
   icon: {
-    width: "8%",
+    width: 30,
   },
   cone: {
     position: "absolute",
