@@ -6,6 +6,7 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#F2C627",
     alignContent: "space-between",
+    
   },
   input: {
     marginTop: 8,
@@ -23,7 +24,7 @@ export const styles = StyleSheet.create({
     height: "24%",
     marginBottom: "7%",
     marginLeft: "auto",
-    marginRight: "auto"
+    marginRight: "auto",
   },
   logo: {
     width: "100%",
@@ -37,7 +38,7 @@ export const styles = StyleSheet.create({
 
   heroes: {
     width: "100%",
-    top: 90
+    top: 90,
   },
   cadastre: {
     color: "white",
@@ -50,7 +51,8 @@ export const styles = StyleSheet.create({
     height: 300,
     marginLeft: "auto",
     marginRight: "auto",
-    top: 40
+    top: 40,
+    borderRadius: 8
   },
   entrar: {
     width: "80%",
