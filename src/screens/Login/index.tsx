@@ -4,7 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 import api from "../../../Services/api";
 import { styles } from "./style";
 import Logo from "../../assets/image/logo.png";
-import Entrar from "../../assets/image/entrar.png";
+import Entrar from "../../assets/image/Entrar.png";
 import Cone from "../../assets/image/cone.png";
 import Gmail from "../../assets/image/gmail.png";
 import Instagram from "../../assets/image/instagram.png";

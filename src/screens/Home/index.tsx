@@ -9,7 +9,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 import axios from 'axios'
 import { useNavigation } from '@react-navigation/native'
 
-import Header from '../../Components/Header/Header '
+import Header from '../../Components/Header/Header'
 import SearchResultCard from '../../Components/SearchResult/SearchResultCard'
 import SuperheroCard from '../../Components/Card/SuperheroCard'
 
@@ -84,12 +84,13 @@ const Home = () => {
 
    return (
       <SafeAreaView style={styles.container}>
-         <Header handleLogout={handleLogout} buscaHeroi={buscaHeroi} />
-         <KeyboardAvoidingView
-            style={[styles.container, { height: 50 }]}
+            <KeyboardAvoidingView
+            style={[styles.container]}
             enabled={false}
-            behavior="height"
+            behavior="padding"
          >
+         <Header handleLogout={handleLogout} buscaHeroi={buscaHeroi} />
+      
             {superheroes ? (
                <SearchResultCard
                   superheroes={superheroes}

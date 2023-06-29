@@ -1,16 +1,15 @@
 import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
-   headerContainer:{
+   headerContainer: {
       backgroundColor: '#f2c627',
-      display:"flex",
-      alignItems: 'center',
+      display: 'flex',
+      alignItems: 'center'
    },
    header: {
       alignItems: 'center',
       textAlign: 'center',
-      flexDirection: 'row',
-      padding: 15
+      flexDirection: 'row'
    },
    btn: {
       marginRight: 10
@@ -24,8 +23,7 @@ const styles = StyleSheet.create({
       width: '90%',
       height: 40,
       borderRadius: 10,
-      textAlign: 'center',
-      
+      textAlign: 'center'
    },
    btn_search: {
       width: 20,
@@ -33,15 +31,13 @@ const styles = StyleSheet.create({
       position: 'absolute',
       right: 25
    },
-   boasVindas:{
-      textAlign:'center',
-      fontWeight:'bold',
-      color:'black',
-      fontSize:25,
-      display:'flex',
-      
+   boasVindas: {
+      textAlign: 'center',
+      fontWeight: 'bold',
+      color: 'black',
+      fontSize: 25,
+      marginTop:15
    }
- 
 })
 
 export default styles

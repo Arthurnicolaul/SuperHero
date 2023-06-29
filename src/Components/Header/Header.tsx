@@ -7,7 +7,7 @@ import { AuthContext } from '../../Context/Auth'
 import Btn_sair from '../../assets/image/Btn_sair.png'
 import Search from '../../assets/image/Search.png'
 
-import styles from './HeadStyle '
+import styles from './HeadStyle'
 
 const Header = ({ handleLogout, buscaHeroi }) => {
    const { nome } = useContext(AuthContext)
@@ -27,7 +27,7 @@ const Header = ({ handleLogout, buscaHeroi }) => {
             <Image source={Search} style={styles.btn_search} />
          </View>
 
-         <Text style={styles.boasVindas}>Bem Vindo: {nome}</Text>
+         <Text style={styles.boasVindas}>Olá {nome} !</Text>
       </View>
    )
 }
