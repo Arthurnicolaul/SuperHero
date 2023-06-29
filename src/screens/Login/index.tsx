@@ -5,8 +5,7 @@ import {
    Text,
    TextInput,
    TouchableOpacity,
-   KeyboardAvoidingView,
-   Linking
+   KeyboardAvoidingView
 } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import api from '../../../Services/api'
@@ -77,25 +76,12 @@ const Login = () => {
       navigation.navigate('Cadastro' as never)
    }
 
-
-  const openGmail = () => {
-    Linking.openURL("https://www.gmail.com");
-  };
-
-  const openInstagram = () => {
-    Linking.openURL("https://www.instagram.com");
-  };
-
-  const openFacebook = () => {
-    Linking.openURL("https://www.facebook.com");
-  };
-
   return (
     <KeyboardAvoidingView style={styles.container} enabled={false} behavior={"height"}>
       <View style={styles.logocontainer}>
         <Image style={styles.logo} source={Logo} />
       </View>
-      <Image style={styles.inputicon} source={InputIcon} resizeMode="contain" />
+      
       <View style={styles.form}>
         <TextInput
           value={email}
@@ -119,13 +105,13 @@ const Login = () => {
           <Text style={styles.cadastre}>CADASTRE-SE JÁ!</Text>
         </TouchableOpacity>
         <View style={styles.icons}>
-          <TouchableOpacity onPress={openGmail}>
+          <TouchableOpacity >
             <Image style={styles.icon} source={Gmail} resizeMode={"contain"} />
           </TouchableOpacity>
-          <TouchableOpacity onPress={openInstagram}>
+          <TouchableOpacity >
             <Image style={styles.icon} source={Instagram} resizeMode={"contain"} />
           </TouchableOpacity>
-          <TouchableOpacity onPress={openFacebook}>
+          <TouchableOpacity>
             <Image style={styles.icon} source={Facebook} resizeMode={"contain"} />
           </TouchableOpacity>
         </View>
