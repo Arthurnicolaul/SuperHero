@@ -1,7 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { Text, TextInput, View, Button } from "react-native";
-import { styles } from "./style";
+import React, { useEffect, useState } from "react";
+import { Image, Text, TextInput, View } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 import api from "../../../Services/api";
+import entrar from "../../assets/image/Entrar.png";
+import Chao from "../../assets/image/chao.png";
+import Hores from "../../assets/image/horescadrastro.png";
+import logo from "../../assets/image/logocadrastro.png";
+import ponteiro from "../../assets/image/ponteiro.png";
+import { styles } from "./style";
 
 interface User {
   name: string;
@@ -11,6 +17,7 @@ interface User {
 }
 
 export const Cadastro = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const [user, setUser] = useState<User>({
     name: "",
     email: "",
@@ -71,46 +78,65 @@ export const Cadastro = () => {
       setError("");
     }
   }, [user.password, user.confirmPassword]);
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
 
   return (
-    <View>
-      <Text>Nome</Text>
+    <View style={styles.container}>
+      <Image style={styles.logo} source={logo}/>
+    <View style={styles.card}>
       <TextInput
         style={styles.input}
         onChangeText={(name) => setUser({ ...user, name })}
         placeholder="Informe seu Nome"
+        placeholderTextColor={'#FFFFFF36'}
         value={user.name}
       />
-      <Text>Email</Text>
       <TextInput
         style={styles.input}
         onChangeText={(email) => setUser({ ...user, email })}
         placeholder="Informe seu Email"
+        placeholderTextColor={'#FFFFFF36'}
         value={user.email}
         keyboardType="email-address"
         autoCapitalize="none"
         textContentType="emailAddress"
       />
-      <Text>Senha</Text>
       <TextInput
         style={styles.input}
         onChangeText={(password) => setUser({ ...user, password })}
         placeholder="Informe sua senha"
+        placeholderTextColor={'#FFFFFF36'}     
         value={user.password}
-        secureTextEntry
+        secureTextEntry= {!showPassword}
       />
-      <Text>Confirma Senha</Text>
       <TextInput
         style={styles.input}
         onChangeText={(confirmPassword) =>
           setUser({ ...user, confirmPassword })
         }
         placeholder="Confirme sua senha"
+        placeholderTextColor={'#FFFFFF36'}
         value={user.confirmPassword}
         secureTextEntry
       />
-      <Button title="Cadastrar" onPress={handleCadastro} />
+      <TouchableOpacity onPress={handleCadastro} >
+      <Image source={entrar}/>
       {error !== "" && <Text style={styles.errorText}>{error}</Text>}
+      </TouchableOpacity>
     </View>
+      {/* <TouchableOpacity onPress={toggleShowPassword} style={styles.eyeIcon}>
+        <MaterialIcons
+         name={showPassword ? 'visibility' : 'visibility-off'}
+          size={50}
+          color={showPassword ? 'white' : 'white'}
+      /> 
+      </TouchableOpacity>*/}
+    <Image style={{width:30, height:50, top:110, left:75}} source={ponteiro}/>
+    <Image style={{height:23,width:350,top:220, left:30}} source={Chao}/>
+    <Image style={{width:500,height:300,bottom:90, right:80}} source={Hores}/>
+    </View>
+    
   );
 };
