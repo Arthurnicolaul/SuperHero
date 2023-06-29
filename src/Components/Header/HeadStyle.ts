@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
    },
    input: {
       backgroundColor: '#deaa25',
-      width: '90%',
+      width: '80%',
       height: 40,
       borderRadius: 10,
       textAlign: 'center'

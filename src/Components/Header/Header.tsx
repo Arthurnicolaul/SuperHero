@@ -11,7 +11,6 @@ import styles from './HeadStyle'
 
 const Header = ({ handleLogout, buscaHeroi }) => {
    const { nome } = useContext(AuthContext)
-   const navigation = useNavigation()
 
    return (
       <View style={styles.headerContainer}>

@@ -6,7 +6,6 @@ import Dc from "../../assets/image/Dc.png";
 import DhComics from "../../assets/image/Dark_Horse_Comics.png";
 import Corte from "../../assets/image/CorteImg.png";
 import Corte2 from "../../assets/image/Corte2.png";
-import btn_detalhe from "../../assets/image/NextDetails.png";
 import Back from "../../assets/image/Back.png";
 import Next from "../../assets/image/Next.png";
 import Proximo from "../../assets/image/Proximo.png";
