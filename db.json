@@ -13,6 +13,13 @@
       "password": "123",
       "confirmPassword": "123",
       "id": 2
+    },
+    {
+      "name": "Felipe",
+      "email": "tese@icloud.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 3
     }
   ]
 }

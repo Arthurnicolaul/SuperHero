@@ -16,6 +16,7 @@ import SuperheroCard from '../../Components/Card/SuperheroCard'
 import Logo from '../../assets/image/logo_name.png'
 
 import styles from '../Home/home'
+import { StackNavigationProp } from '@react-navigation/stack'
 
 const apiUrl = 'https://superheroapi.com/api/6755748551123703'
 
