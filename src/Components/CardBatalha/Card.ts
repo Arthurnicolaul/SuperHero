@@ -78,20 +78,22 @@ const styles = StyleSheet.create({
    },
    btn_jogar: {
       position: 'absolute',
-      top:380
+      top: 380
    },
    img_jogar: {
       width: 150,
       height: 150
    },
    btn_sair: {
+      position: 'absolute',
       width: 50,
       height: 50
    },
    sair: {
       position: 'absolute',
-      top: 70,
-      left: 40
+      zIndex: 9999,
+      top:70,
+      left:40
    }
 })
 

@@ -44,15 +44,10 @@ export const styles = StyleSheet.create({
       backgroundColor:'white'
     },
     logo: {
-      width:120,
-      height:120,
-      top:100,
+      width:'47%',
+      height:'24%',
+      top:90,
       alignItems:"center"
-    },
-    eyeIcon: {
-    position:"absolute",
-    zIndex:9,
-    left:0
-    },
+    }
    
   });
