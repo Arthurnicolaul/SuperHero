@@ -34,6 +34,13 @@
       "password": "123",
       "confirmPassword": "123",
       "id": 22
+    },
+    {
+      "name": "Vinicius",
+      "email": "viniciusdeniz84@gmail.com",
+      "password": "aaa",
+      "confirmPassword": "aaa",
+      "id": 23
     }
   ]
 }

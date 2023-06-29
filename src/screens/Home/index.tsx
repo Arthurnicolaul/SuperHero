@@ -100,6 +100,7 @@ const Home = () => {
       }
    }
    return (
+
       <SafeAreaView style={styles.container}>
          <View style={styles.header}>
             <TouchableOpacity onPress={handleLogout} style={styles.btn}>
@@ -113,6 +114,7 @@ const Home = () => {
             />
             <Image source={Search} style={styles.btn_search} />
          </View>
+
 
          {superheroes ? (
             <FlatList

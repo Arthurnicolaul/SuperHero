@@ -5,9 +5,11 @@ import { Cadastro } from '../../screens/Cadastro'
 import Home from '../../screens/Home'
 import Game from '../../screens/Game'
 
-const AuthStack = createStackNavigator()
+
+const AuthStack = createStackNavigator();
 
 const AuthRoutes = () => {
+
    return (
       <AuthStack.Navigator screenOptions={{ headerShown: false }}>
          <AuthStack.Screen name="Login" component={Login} />
@@ -18,4 +20,5 @@ const AuthRoutes = () => {
    )
 }
 
-export default AuthRoutes
+
+export default AuthRoutes;
