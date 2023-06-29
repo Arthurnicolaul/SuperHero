@@ -20,6 +20,7 @@ import Facebook from '../../assets/image/facebook.png'
 import Heroes from '../../assets/image/heroes.png'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
+
 const Login = () => {
    const navigation = useNavigation()
    const [email, setEmail] = useState('')
@@ -75,71 +76,54 @@ const Login = () => {
       navigation.navigate('Cadastro' as never)
    }
 
-   return (
-      <KeyboardAvoidingView
-         style={styles.container}
-         enabled={false}
-         behavior={'height'}
-      >
-         <View style={styles.logocontainer}>
-            <Image style={styles.logo} source={Logo} />
-         </View>
-         <Image
-            style={styles.inputicon}
-            source={InputIcon}
-            resizeMode="contain"
-         />
-         <View style={styles.form}>
-            <TextInput
-               value={email}
-               onChangeText={setEmail}
-               style={styles.input}
-               placeholder="Email"
-               placeholderTextColor="grey"
-            />
-            <TextInput
-               value={password}
-               onChangeText={setPassword}
-               placeholder="Senha"
-               placeholderTextColor="grey"
-               secureTextEntry
-               style={styles.input}
-            />
-            <TouchableOpacity onPress={handleLogin}>
-               <Image
-                  style={styles.entrar}
-                  source={Entrar}
-                  resizeMode="contain"
-               />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={handleCadastro}>
-               <Text style={styles.cadastre}>CADASTRE-SE JÁ!</Text>
-            </TouchableOpacity>
-            <View style={styles.icons}>
-               <Image
-                  style={styles.icon}
-                  source={Gmail}
-                  resizeMode={'contain'}
-               />
-               <Image
-                  style={styles.icon}
-                  source={Instagram}
-                  resizeMode={'contain'}
-               />
-               <Image
-                  style={styles.icon}
-                  source={Facebook}
-                  resizeMode={'contain'}
-               />
-            </View>
-            <Image style={styles.cone} source={Cone} />
-            {message !== '' && <Text style={styles.errorText}>{message}</Text>}
-         </View>
-         <View>
-            <Image style={styles.heroes} source={Heroes} resizeMode="contain" />
-         </View>
-      </KeyboardAvoidingView>
-   )
-}
+  return (
+    <KeyboardAvoidingView style={styles.container} enabled={false} behavior={"height"}>
+      <View style={styles.logocontainer}>
+        <Image style={styles.logo} source={Logo} />
+      </View>
+      
+      <View style={styles.form}>
+        <TextInput
+          value={email}
+          onChangeText={setEmail}
+          style={styles.input}
+          placeholder="Email"
+          placeholderTextColor="grey"
+        />
+        <TextInput
+          value={password}
+          onChangeText={setPassword}
+          placeholder="Senha"
+          placeholderTextColor="grey"
+          secureTextEntry
+          style={styles.input}
+        />
+        <TouchableOpacity onPress={handleLogin}>
+          <Image style={styles.entrar} source={Entrar} resizeMode="contain" />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={handleCadastro}>
+          <Text style={styles.cadastre}>CADASTRE-SE JÁ!</Text>
+        </TouchableOpacity>
+        <View style={styles.icons}>
+          <TouchableOpacity >
+            <Image style={styles.icon} source={Gmail} resizeMode={"contain"} />
+          </TouchableOpacity>
+          <TouchableOpacity >
+            <Image style={styles.icon} source={Instagram} resizeMode={"contain"} />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image style={styles.icon} source={Facebook} resizeMode={"contain"} />
+          </TouchableOpacity>
+        </View>
+        <Image style={styles.cone} source={Cone} />
+        {message !== "" && <Text style={styles.errorText}>{message}</Text>}
+      </View>
+      <View>
+        <Image style={styles.heroes} source={Heroes} resizeMode="contain" />
+      </View>
+    </KeyboardAvoidingView>
+  );
+};
+
 
 export default Login
