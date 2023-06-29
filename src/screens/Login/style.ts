@@ -73,11 +73,5 @@ export const styles = StyleSheet.create({
     bottom: -25,
     right: 50,
   },
-  inputicon: {
-    position: "absolute",
-    top: 335,
-    right: 115,
-    zIndex: 2,
-    width: 24,
-  },
+  
 });
