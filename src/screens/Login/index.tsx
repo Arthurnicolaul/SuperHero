@@ -1,5 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { View, Image, Text, TextInput, TouchableOpacity, KeyboardAvoidingView } from "react-native";
+import {
+  View,
+  Image,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  KeyboardAvoidingView,
+  Linking,
+} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import api from "../../../Services/api";
 import { styles } from "./style";
@@ -12,7 +20,6 @@ import Instagram from "../../assets/instagram.png";
 import Facebook from "../../assets/facebook.png";
 import Heroes from "../../assets/heroes.png";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 const Login = () => {
   const navigation = useNavigation();
@@ -69,6 +76,18 @@ const Login = () => {
     navigation.navigate("Cadastro" as never);
   };
 
+  const openGmail = () => {
+    Linking.openURL("https://www.gmail.com");
+  };
+
+  const openInstagram = () => {
+    Linking.openURL("https://www.instagram.com");
+  };
+
+  const openFacebook = () => {
+    Linking.openURL("https://www.facebook.com");
+  };
+
   return (
     <KeyboardAvoidingView style={styles.container} enabled={false} behavior={"height"}>
       <View style={styles.logocontainer}>
@@ -98,9 +117,15 @@ const Login = () => {
           <Text style={styles.cadastre}>CADASTRE-SE JÁ!</Text>
         </TouchableOpacity>
         <View style={styles.icons}>
-          <Image style={styles.icon} source={Gmail} resizeMode={"contain"} />
-          <Image style={styles.icon} source={Instagram} resizeMode={"contain"} />
-          <Image style={styles.icon} source={Facebook} resizeMode={"contain"} />
+          <TouchableOpacity onPress={openGmail}>
+            <Image style={styles.icon} source={Gmail} resizeMode={"contain"} />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={openInstagram}>
+            <Image style={styles.icon} source={Instagram} resizeMode={"contain"} />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={openFacebook}>
+            <Image style={styles.icon} source={Facebook} resizeMode={"contain"} />
+          </TouchableOpacity>
         </View>
         <Image style={styles.cone} source={Cone} />
         {message !== "" && <Text style={styles.errorText}>{message}</Text>}
