@@ -75,6 +75,7 @@ const Home = () => {
    }
    return (
       <SafeAreaView>
+         
          <Button title="Sair" onPress={handleLogout} />
          <TextInput
             style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}

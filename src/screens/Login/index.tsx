@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, Image, Text, TextInput, TouchableOpacity } from "react-native";
+import { View, Image, Text, TextInput, TouchableOpacity, KeyboardAvoidingView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import api from "../../../Services/api";
 import { styles } from "./style";
@@ -11,10 +11,8 @@ import Gmail from "../../assets/gmail.png";
 import Instagram from "../../assets/instagram.png";
 import Facebook from "../../assets/facebook.png";
 import Heroes from "../../assets/heroes.png";
-// import Facebook from "../../assets/facebook.png";
-// import Gmail from "../../assets/gmail.png";
-// import Instagram from "../../assets/instagram.png";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Login = () => {
   const navigation = useNavigation();
@@ -72,9 +70,10 @@ const Login = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <Image style={styles.x} source={Logo} />
-
+    <KeyboardAvoidingView style={styles.container} enabled={false} behavior={"height"}>
+      <View style={styles.logocontainer}>
+        <Image style={styles.logo} source={Logo} />
+      </View>
       <Image style={styles.inputicon} source={InputIcon} resizeMode="contain" />
       <View style={styles.form}>
         <TextInput
@@ -106,8 +105,10 @@ const Login = () => {
         <Image style={styles.cone} source={Cone} />
         {message !== "" && <Text style={styles.errorText}>{message}</Text>}
       </View>
-      <Image style={styles.heroes} source={Heroes} resizeMode="contain" />
-    </View>
+      <View>
+        <Image style={styles.heroes} source={Heroes} resizeMode="contain" />
+      </View>
+    </KeyboardAvoidingView>
   );
 };
 
